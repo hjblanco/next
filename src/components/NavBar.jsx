@@ -2,7 +2,8 @@
 
 import userStore from "@/store/userStore";
 import Link from "next/link";
-import { FaRegUserCircle } from "react-icons/fa";
+import Image from "next/image";
+
 
 export default function NavBar() {
 
@@ -28,14 +29,17 @@ export default function NavBar() {
                 <li>Blog</li>
                 {usuario ?
 
-                    (<li>
-                        <li className="flex items-center gap-2 border border-gray-400 rounded-lg px-2 py-1"> 
+                    (<li  className="flex items-center gap-2 border border-gray-400 rounded-lg px-2 py-1" >
                         
-                        <div>
-                        <Image src={usuario.photoURL ?? null} width={20} height={20} className="rounded-full" alt="profile" />
+                        
+                        <div className="flex items-center gap-2">
+                        <Image src={usuario.photoURL } width={20} height={20} className="rounded-full" alt="profile" />
+                        Mi perfil
                         </div>
                         
-                        </li>)
+                        
+                    </li>)
+
                     :
                     (<>
                         <li className="bg-red-600 p-2 rounded-2xl text-white">
